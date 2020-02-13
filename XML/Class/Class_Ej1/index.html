@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <form id="patient" onsubmit="onSubmitMedic();return false">
+            <p>Patient</p>
+
+            <label for="name">Name: </label>
+            <input type="text" id="name"><br>
+            <label for="surname">Surname: </label>
+            <input type="text" id="surname"><br>
+            <label for="age">Age: </label>
+            <input type="text" id="age"><br>
+            <label for="illness">Illness: </label>
+            <input type="text" id="illness"><br>
+            <label for="date">Date: </label>
+            <input type="text" id="date"><br>
+            <button> SubmitPatient </button>
+
+        </form>
+
+        <form id = "medic" onsubmit="onSubmitMedic();return false">
+            <p>Medic</p>
+
+            <label for="name">Name: </label>
+            <input type="text" id="name"><br>
+            <label for="surname">Surname: </label>
+            <input type="text" id="surname"><br>
+            <label for="age">Age: </label>
+            <input type="text" id="age"><br>
+            <label for="field">Field: </label>
+            <input type="text" id="field"><br>
+            <label for="floor">Floor: </label>
+            <input type="text" id="floor"><br>
+            <button> SubmitMedic </button>
+
+        </form>
+    </body>
+    <script type="text/javascript" src="./dist/bundle.js"></script>
+</html>
