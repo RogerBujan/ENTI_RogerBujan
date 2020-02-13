@@ -9,6 +9,6 @@
 // }
 const Saiyan = require('./sayan');
 
-const goku = new Saiyan ('Goku', 'Kame',  true);
+const goku = new Saiyan ({name:'Goku',attack: 'Kame',canFly: true,hasTail: true});
 
 console.log(goku.doAttack());

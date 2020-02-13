@@ -1,12 +1,16 @@
-class Saiyan {
-    constructor (name, attack, canFly){
-        this.name = name;
-        this.attack = attack;
-        this.canFly = canFly;
+class Saiyan extends Human{
+    constructor ({name, attack, canFly, hasTail}){
+        super({name, attack, canFly});
+        this.isSuperSayan = false;
+        this.hasTail = hasTail;
     }
 
-    doAttack(){
-        return this.attack;
+    transToSuperSayan(){
+        this.isSuperSayan = true;
+    }
+
+    transToNormal(){
+        this.isSuperSayan = false;     
     }
 }
 
