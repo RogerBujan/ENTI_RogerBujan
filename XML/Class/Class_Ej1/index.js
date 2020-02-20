@@ -5,7 +5,7 @@ const patients = [];
 const doctors = [];
 
 const onSubmitMedic = () => {
-
+ 
 }
 
 const onSubmitPatient = () =>{
