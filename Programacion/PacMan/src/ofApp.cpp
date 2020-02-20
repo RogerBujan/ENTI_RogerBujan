@@ -18,12 +18,14 @@ void ofApp::setup(){
 		key_released[i] = false;
 	}
 
-	sceneGame->init();
-
 	//Time
 	ofSetFrameRate(60);
 	old_time = begin_time;
 	new_time = begin_time;
+
+	//Scene
+	gameScene = new Scene();
+	gameScene->init();
 }
 
 //--------------------------------------------------------------
@@ -34,13 +36,7 @@ void ofApp::update(){
 	global_delta_time = int(new_time - old_time);
 	//---------------------------------------------------
 
-	sceneGame->update();
-
-	if (key_down['W'] || key_down['w']) {
-
-	}else if(key_down['S'] || key_down['s']) {
-
-	}
+	gameScene->update();
 
 	//--------------------End update---------------------
 	for (int i = 0; i < 255; i++) { //Control for pressed and released events
@@ -52,9 +48,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	ofClear(0);
-
-	sceneGame->render();
-
+	gameScene->render();
 }
 
 //--------------------------------------------------------------

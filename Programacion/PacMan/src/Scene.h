@@ -1,27 +1,33 @@
 #ifndef SCENE_H
 #define SCENE_H
 
-#include "includes.h"
 #include "ofMain.h"
-#include <fstream>
-#include <string>
-#include <iostream>
+#include "includes.h"
+#include "Pacman.h"
+#include "Ghost.h"
 
-class Scene
-{
-public:
-	Scene();
-	~Scene();
+class Scene {
+	public:
+		Scene();
+		~Scene();
 
-	void init();
-	void update();
-	void render();
+		void init();
+		void update();
+		void render();
 
-private:
+	private:
+		void initMap();
+		void renderMap();
 
-	void initMap();
-	void renderMap();
-	std::vector<std::vector<bool>> mCollisionMap;
+		int mpOffsetX;
+		int mpOffsetY;
+		int mpMapWidth;
+		int mpMapHeight;
+		std::vector<std::vector<bool>> mpCollisionMap;
+
+		Pacman* mPlayer;
+
+		std::vector<Ghost*> foes;
 };
 
-#endif // SCENE_H
+#endif

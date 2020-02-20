@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Scene.h"
 #include "ofMain.h"
+#include "Scene.h"
 
 class ofApp : public ofBaseApp{
 
@@ -21,7 +21,6 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
 
-		Scene* sceneGame;
+		Scene* gameScene;
 };
