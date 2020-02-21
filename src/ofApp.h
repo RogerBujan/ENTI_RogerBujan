@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Paddle.h"
+#include "Scene.h"
 
 class ofApp : public ofBaseApp{
 
@@ -22,6 +22,5 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		Paddle* player1;
-		
+		Scene* gameScene;
 };

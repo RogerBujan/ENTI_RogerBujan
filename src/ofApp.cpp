@@ -23,10 +23,9 @@ void ofApp::setup(){
 	old_time = begin_time;
 	new_time = begin_time;
 
-	player1 = new Paddle();
-	player1->setXY(100, 100);
-	player1->setW(30);
-	player1->setH(100);
+	//Scene
+	gameScene = new Scene();
+	gameScene->init();
 }
 
 //--------------------------------------------------------------
@@ -37,11 +36,7 @@ void ofApp::update(){
 	global_delta_time = int(new_time - old_time);
 	//---------------------------------------------------
 
-	if (key_down['W'] || key_down['w']) {
-		player1->moveUp(2 * global_delta_time);
-	}else if(key_down['S'] || key_down['s']) {
-		player1->moveDown(2 * global_delta_time);
-	}
+	gameScene->update();
 
 	//--------------------End update---------------------
 	for (int i = 0; i < 255; i++) { //Control for pressed and released events
@@ -53,7 +48,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	ofClear(0);
-	player1->render();
+	gameScene->render();
 }
 
 //--------------------------------------------------------------
