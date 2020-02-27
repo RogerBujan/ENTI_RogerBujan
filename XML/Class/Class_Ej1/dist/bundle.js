@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _patient__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./patient */ \"./patient.js\");\n/* harmony import */ var _patient__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_patient__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _medic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./medic */ \"./medic.js\");\n/* harmony import */ var _medic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_medic__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nconst patients = [];\r\nconst doctors = [];\r\n\r\nconst onSubmitMedic = () => {\r\n\r\n}\r\n\r\nconst onSubmitPatient = () =>{\r\n\r\n}\r\n\r\nwindow.onSubmitMedic = onSubmitMedic;\r\nwindow.onSubmitPatient = onSubmitPatient;\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _patient__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./patient */ \"./patient.js\");\n/* harmony import */ var _medic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./medic */ \"./medic.js\");\n\r\n\r\n\r\nconst patients = [];\r\nconst doctors = [];\r\n\r\nconst onSubmitMedic = () => {\r\n\r\n}\r\n\r\nconst onSubmitPatient = () => {\r\n\r\n}\r\n\r\nwindow.onSubmitMedic = onSubmitMedic;\r\nwindow.onSubmitPatient = onSubmitPatient;\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -102,10 +102,11 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pat
 /*!******************!*\
   !*** ./medic.js ***!
   \******************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("class Medic extends Person{\r\n    constructor(name,surname,age,field,floor){\r\n        super(name,surname,age);\r\n        this.field = field;\r\n        this.floor = floor;\r\n    }\r\n}\n\n//# sourceURL=webpack:///./medic.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _person__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./person */ \"./person.js\");\n\r\n\r\nclass Medic extends _person__WEBPACK_IMPORTED_MODULE_0__[\"default\"]{\r\n    constructor({name,surname,age,field,floor}){\r\n        super({name: name, surname: surname, age: age});\r\n        this.field = field;\r\n        this.floor = floor;\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Medic);\n\n//# sourceURL=webpack:///./medic.js?");
 
 /***/ }),
 
@@ -113,10 +114,23 @@ eval("class Medic extends Person{\r\n    constructor(name,surname,age,field,floo
 /*!********************!*\
   !*** ./patient.js ***!
   \********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("class Patient extends Person{\r\n    constructor(name,surname,age,illness,date){\r\n        super(name,surname,age);\r\n        this.illness = illness;\r\n        this.data = data;\r\n    }\r\n}\n\n//# sourceURL=webpack:///./patient.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _person__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./person */ \"./person.js\");\n\r\n\r\nclass Patient extends _person__WEBPACK_IMPORTED_MODULE_0__[\"default\"]{\r\n    constructor({name,surname,age,illness,date}){\r\n        super({name, surname, age});\r\n        this.illness = illness;\r\n        this.data = data;\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Patient);\n\n//# sourceURL=webpack:///./patient.js?");
+
+/***/ }),
+
+/***/ "./person.js":
+/*!*******************!*\
+  !*** ./person.js ***!
+  \*******************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nclass Person{\r\n    constructor({name,surname,age}){\r\n        this.name = name;\r\n        this.surname = surname;\r\n        this.age = age;\r\n    }\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Person);\n\n//# sourceURL=webpack:///./person.js?");
 
 /***/ })
 
