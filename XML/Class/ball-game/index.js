@@ -1,10 +1,9 @@
 import GameOver from './GameOver';
 import Score from './Score';
+import Ball from './Ball';
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-let y = 50;
-let x = 50;
 
 const gameOver = new GameOver({
   font : 'bold 24px verdana, sans-serif ',
@@ -22,35 +21,48 @@ const score = new Score({
   canvas
 })
 
+const ball = new Ball({
+    x : Math.floor(Math.random() * canvas.width),
+    y : 0,
+    radious : 25,
+    canvas,
+    onClick = onClick()
+})
+
 const onClick = event => {
   if (event.region) {
     score.incrementScore();
     score.render();
-    y = 0;
-    x = Math.floor(Math.random() * canvas.width);
+    ball.resetPos();
+
+    // y = 0;
+    // x = Math.floor(Math.random() * canvas.width);
   }
 };
 
-const draw = () => {
+const update = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.beginPath();
-  ctx.arc(x, y, 25, 0, Math.PI * 2, true);
-  ctx.closePath();
-  ctx.fill();
 
-  ctx.addHitRegion({ id: 'circle' });
-  canvas.addEventListener('click', onClick);
+  ball.render();
+  ball.update();
 
-  y = y + 3;
+  // ctx.beginPath();
+  // ctx.arc(x, y, 25, 0, Math.PI * 2, true);
+  // ctx.closePath();
+  // ctx.fill();
+
+  // ctx.addHitRegion({ id: 'circle' });
+  // canvas.addEventListener('click', onClick);
+
+  // y = y + 3;
 
   // CHECK BOUNDS
   score.render();
-  if (y > canvas.height) {
-    x = Math.floor(Math.random() * canvas.width);
+  if (ball.isOutside()) {
     gameOver.render();
     score.render();
   } else {
     window.requestAnimationFrame(draw);
   }
 };
-draw();
+update();
